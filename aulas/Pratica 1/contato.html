@@ -1,0 +1,48 @@
+<html>
+<head>
+  <title>Contatos</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
+<body>
+  <h1>Formulário de Consultas</h1>
+  <form name="formContato" id="formContato" method="post">
+    <label for="nome">Nome e sobrenome</label>
+    <input name="nome" id="nome" type="text" maxlength="100" size="100" placeholder="Joao silva" />
+    <br />
+    <label for="email">E-mail</label>
+    <input name="email" id="email" type="email" maxlength="100" size="100" placeholder="example@mail.com" />
+    <br />
+    <label for="assunto">Assunto da Mensagem</label>
+    <select name="assunto" id="assunto">
+      <option value="" selected></option>
+      <option value="1">Desabafar</option>
+      <option value="2">Fazer Amigos</option>
+      <option value="3">Matar alguém</option>
+      <option value="4">Outros</option>
+    </select>
+    <br />
+    <label for="genero">Genero</label>
+    <input name="genero" id="generoMasculino" type="radio" value="M" />
+    <label for="generoMasculino">Masculino</label>
+    <input name="genero" id="generoFeminino" type="radio" value="F" />
+    <label for="generoFeminino">Feminino</label>
+    <input name="genero" id="generoIndeciso" type="radio" value="N" />
+    <label for="generoIndeciso">Outros</label>
+    <br />
+    <label for="passatempo">Curso</label>
+    <input name="curso[]" id="marketing" type="checkbox" value="1" />
+    <label for="marketing">Marketing Digital</label>
+    <input name="curso[]" id="mobile" type="checkbox" value="2" />
+    <label for="mobile">Mobile</label>
+    <input name="curso[]" id="fullstack" type="checkbox" value="3" />
+    <label for="fullstack">Fullstack</label>
+    <br />
+    <label for="comentario">Comentários</label>
+    <textarea name="comentario" maxlength="200"></textarea>
+    <br />
+    <button id="enviar">Enviar</button>
+    <button id="excluir">Excluir</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body{
+  font-family: 'Raleway', sans-serif;
+  background-image: url('../images/plano-de-fundo.png');
+  background-attachment: fixed;
+}
+
+h1{
+  text-align: center;
+  font-style: italic;
+  color: #c62828;
+  background-color: rgba(246, 40, 40, 0.3);
+}
+
+h2, h3, h4{
+  color: #c62828;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+p{
+  text-align: justify;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.destaque{
+  background-color: #ef5350;
+  color: #fff;
+  font-size: 22px;
+  line-height: 30px;
+}

@@ -1,0 +1,106 @@
+body {
+  font-family: sans-serif, verdana;
+  font-size: 15px;
+  color: black;
+
+  background-image: url("../img/fundo.png");
+  background-attachment: fixed;
+}
+
+h1 {
+  font-family: 'Gaegu', cursive;
+  font-size: 1.5em;
+  color: rgba(50,00,20,0.7);;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
+h2 {
+  font-family: verdana;
+  font-size: 1rem;
+  text-decoration: underline;
+  color: blue;
+}
+
+hr {
+  border: 1px solid black;
+}
+
+ul li {
+  padding: 5px 5px 5px 5px;
+}
+
+p {
+  text-align: justify;
+  line-height: 9px;
+  font-size: 14px;
+}
+
+.destaque {
+	background-color: maroon;
+	color: white;
+	font-size: 22px;
+	line-height: 22px;
+}
+
+mark {
+  background-color: #cccccc;
+}
+
+a:hover {
+  color: red;
+}
+
+textarea {
+  resize: none;
+  width: 200px;
+  height: 2 00px;
+}
+
+input:focus {
+  background-color: #c5c5c5;
+}
+
+select:focus {
+  background-color: #c5c5c5;
+}
+
+textarea:focus {
+  background-color: #c5c5c5;
+}
+
+
+/*index*/
+.perfil {
+  border: 5px dotted black;
+  background-color: #c7c7c7;
+  margin: 20px auto;
+  width: 960px;
+  padding: 30px 30px 30px 30px;
+}
+
+.dadosPessoais {
+  border: 5px dotted black;
+  background-color: #d7d7d7;
+  margin: 20px auto;
+  width: 960px;
+  padding: 30px 30px 30px 30px;
+}
+
+.formacao {
+  border: 5px dotted black;
+  background-color: #c7c7c7;
+  margin: 20px auto;
+  width: 960px;
+  padding: 30px 30px 30px 30px;
+}
+
+.experiencia {
+  border: 5px dotted black;
+  background-color: #d7d7d7;
+  margin: 20px auto;
+  width: 960px;
+  padding: 30px 30px 30px 30px;
+}
+/*fim index*/

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Raleway', sans-serif;
+  background-image: url('../images/plano-de-fundo.png');
+  background-attachment: fixed;
+}
+
+h1{
+  text-align: center;
+  font-style: italic;
+  color: #c62828;
+  background-color: rgba(246, 40, 40, 0.3);
+}
+
+h2, h3, h4{
+  color: #c62828;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+p{
+  text-align: justify;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+strong{
+  color: #c62828;
+}
+
+mark{
+  background-color: rgba(246, 40, 40, 0.3);
+}
+.destaque{
+  background-color: #ef5350;
+  color: #fff;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+
+form input[type="text"],
+form input[type="email"],
+form textarea,
+form select{
+  width: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  background-color: rgba(246, 40, 40, 0.3);
+}
+
+form textarea{
+  resize: vertical;
+}
+
+a:hover{
+  font-weight: bold;
+}
+
+.efeito-borda:hover{
+  border-radius: 20px;
+}
+
+header,
+section,
+aside,
+footer{
+  background-color: #ffd49e;
+  width: 960px;
+  padding: 30px;
+  border: 5px dotted orange;
+  margin: 20px auto;
+}
+
+.container-centralizado{
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.container-b{
+  width: 300px;
+  float: left;
+}
+
+.container-c{
+  width: 630px;
+  float: right;
+}

@@ -1,0 +1,69 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/estilos.css" />
+  <style>
+    header {
+      width: 100%;
+      padding: 30px;
+      clear: both;
+      margin-right: 20px auto;
+    }
+
+    footer {
+        width: 100%;
+        padding: 30px;
+        clear: both;
+        margin-right: 20px auto;
+    }
+
+    #painelEsquerdo {
+      float: left;
+      width: 20%;
+      box-sizing: border-box;
+    }
+
+    #paiinelDireito {
+      float: right;
+      width: 80%;
+      box-sizing: border-box;
+    }
+
+    img {
+      display: inline;
+    }
+
+    img:hover {
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meus Passatempos</h1>
+  </header>
+  <section id="painelEsquerdo">
+    <a href="index.html">Voltar</a>
+  </section>
+  <section id="paiinelDireito">
+    <img src="img/dive.jpg" alt="mergulho" title="mergulho" width="300" height="200" />
+    <img src="img/skydive.jpg" alt="paraquedismo" title="paraquedismo" width="300" height="200" />
+    <img src="img/bike.jpg" alt="ciclismo" title="ciclismo" width="300" height="200" />
+
+    <h2 class="destaque">Audio em HTML5</h2>
+    <audio width="100" controls>
+    <source src="img/audio2.mp3" type="audio/mp3">
+    <p>Seu navegador não é compatível com vídeo html5</p>
+    </audio>
+
+    <h2 class="destaque">Vídeo em HTML5</h2>
+    <video width="480" controls poster="img/d1.jpg">
+    <source src="img/video2.webm" type="video/webm">
+    <p>Seu navegador não é compatível com vídeo html5</p>
+    </video>
+  </section>
+  <footer>
+    <p>Todos os direitos reservados</p>
+  </footer>
+</body>
+</html>

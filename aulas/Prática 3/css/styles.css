@@ -1,0 +1,102 @@
+* {
+
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 0.92em;
+}
+
+strong {
+  font-size: 1.2em;
+}
+
+header {
+  position: relative;
+  height: 20vh;
+  width: 100%;
+  background-color: red;
+  border: 1px solid red;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.caixa1 {
+  width: 21%;
+  background-color: green;
+  border: 1px solid green;
+  float: left;
+}
+
+.caixa2 {
+  width: 66%;
+  background-color: orange;
+  border: 1px solid orange;
+  margin-left: 2%;
+  float: left;
+}
+
+.caixa3 {
+  width: 8%;
+  background-color: blue;
+  border: 1px solid blue;
+  float: left;
+}
+
+
+@media (max-width: 900px){
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .caixa1 {
+    width: 40%;
+    float: left;
+  }
+
+  .caixa2 {
+    width: 55%;
+    margin: 0;
+    float: right;
+  }
+
+  .caixa3 {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 450px){
+
+  .caixa1 {
+    width: 100%;
+  }
+
+  .caixa2 {
+    width: 100%;
+    margin: 0;
+  }
+
+  .caixa3 {
+    width: 100%;
+  }
+
+  * {
+    font-size: 1.3em;
+  }
+
+}

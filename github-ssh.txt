@@ -1,0 +1,8 @@
+Gerando Sua Chave Pública SSH
+cd ~/.ssh
+ls
+
+ssh-keygen
+cat ~/.ssh/id_rsa.pub
+
+https://git-scm.com/book/pt-br/v1/Git-no-Servidor-Gerando-Sua-Chave-P%C3%BAblica-SSH

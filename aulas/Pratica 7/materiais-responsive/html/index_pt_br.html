@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Web Design Responsivo</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+	</head>
+		<style>
+
+		body {
+			background-image: url("images/bg-body.png");
+		}
+
+		.main-header {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+		.main-footer {
+			max-width: 900px;
+			margin: 0 auto;
+			background-color: red;
+			position: relative;
+			display: block;
+			text-align: center;
+			height: 50px;
+			clear: both;
+			border-radius: 10px 10px 0px 0px;
+			line-height: 40px;
+		}
+
+		.main-footer ul {
+			list-style: none;
+		}
+
+		.main-footer ul li {
+			display: inline;
+			margin: auto 10px;
+		}
+
+		.main-footer ul li a {
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 12px;
+			font-family: verdana;
+			color: white;
+			line-height: 10px;
+		}
+
+		.banner {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+		.banner img {
+			width: 100%;
+			height: auto;
+		}
+
+		.logo {
+			border-radius: 100px;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.main-nav {
+			display: block;
+		}
+
+		.main-nav ul li {
+			position: relative;
+			margin: 0 5px;
+			background-color: rgb(0,0,0,0.7);
+			display: inline-block;
+			overflow: hidden;
+			width: 120px;
+			height: 30px;
+			text-align: center;
+			line-height: 1.7em;
+		}
+
+		.main-nav ul li a {
+			text-decoration: none;
+			font-family: verdana;
+			font-size: 12px;
+			color: white;
+			text-transform: uppercase;
+		}
+
+
+		.vip-products {
+			max-width: 900px;
+			margin: 0 auto;
+			position: relative;
+			display: block;
+		}
+
+		.product {
+				position: relative;
+				display: inline-block;
+				float: left;
+				width: 250px;
+				height: auto;
+				margin: 20px 20px;
+		}
+
+		.product img {
+			width: 250px;
+			height: 150px;
+			border: 0;
+		}
+
+		.product h2 {
+			font-family: verdana;
+			font-weight: bold;
+			font-size: 16px;
+		}
+
+		.product p {
+			font-family: verdana;
+			font-size: 12px;
+			text-align: justify;
+		}
+
+		.product a {
+			position: relative;
+			display: inline-block;
+			font-family: verdana;
+			font-size: 12px;
+			text-decoration: none;
+			color: white;
+			text-align: center;
+			margin: auto auto;
+			background: rgba(0, 0, 0, 0.7);
+			border: 1px solid	 rgba(0,0,0,0.9);
+			width: 100px;
+			height: 20px;
+		}
+
+
+	</style>
+	<body>
+
+	<div class="container">
+
+		<!-- cabecalho -->
+		<header class="main-header">
+			<img src="images/logo.jpg" alt="logotipo" class="logo"> <a href="#" class="toggle-nav"> <span class="ion-navicon-round"></span> </a>
+
+			<nav class="main-nav">
+				<ul>
+					<li><a href="#">home</a></li>
+					<li><a href="#">quem somos</a></li>
+					<li><a href="#">serviços</a></li>
+					<li><a href="#">portfólio</a></li>
+					<li><a href="#">lojas</a></li>
+					<li><a href="#">contato</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- banner -->
+		<section class="banner">
+			<img src="images/img-banner.jpg" alt="banner">
+		</section>
+
+		<!-- produtos -->
+		<section class="vip-products">
+			<article class="product">
+				<img src="images/img-pdto-1.jpg" alt="pdto 01">
+				<h2>Lorem ipsum amet</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
+				<a href="#">ver mais</a>
+			</article>
+			<article class="product">
+				<img src="images/img-pdto-2.jpg" alt="pdto 02">
+				<h2>Lorem ipsum amet</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
+				<a href="#">ver mais</a>
+			</article>
+			<article class="product">
+				<img src="images/img-pdto-3.jpg" alt="pdto 03">
+				<h2>Lorem ipsum amet</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
+				<a href="#">ver mais</a>
+			</article>
+			<article class="product">
+				<img src="images/img-pdto-1.jpg" alt="pdto 01">
+				<h2>Lorem ipsum amet</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
+				<a href="#">ver mais</a>
+			</article>
+			<article class="product">
+				<img src="images/img-pdto-2.jpg" alt="pdto 02">
+				<h2>Lorem ipsum amet</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
+				<a href="#">ver mais</a>
+			</article>
+			<article class="product">
+				<img src="images/img-pdto-3.jpg" alt="pdto 03">
+				<h2>Lorem ipsum amet</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
+				<a href="#">ver mais</a>
+			</article>
+		</section>
+
+		<footer class="main-footer">
+			<ul>
+				<li><a href="#">home</a></li>
+				<li><a href="#">quem somos</a></li>
+				<li><a href="#">serviços</a></li>
+				<li><a href="#">portfólio</a></li>
+				<li><a href="#">lojas</a></li>
+				<li><a href="#">contato</a></li>
+			</ul>
+		</footer>
+	</div>
+
+	</body>
+</html>

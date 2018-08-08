@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: url('../images/bg.jpg');
+}
+
+header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.container{
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+}
+
+img.logo{
+  width: 150px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.menu{
+  background-color: orange;
+  padding: 5px;
+  display: inline-block;
+  width: 90%;
+  margin-top: 50px;
+  float: right;
+  overflow: hidden;
+}
+
+.menu ul{
+  list-style: none;
+  margin-left: 70px;
+}
+
+.menu ul li{
+  display: inline-block;
+  margin: 0 20px;
+  color: #fff;
+}
+
+.produtos{
+  background-color: #fff;
+  padding: 10px;
+  position: relative;
+  margin: 170px auto 40px;
+  width: 960px;
+}
+
+.box{
+  position: relative;
+  width: 270px;
+  height: 270px;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding-top: 100px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.box p{
+  background-color: rgba(0, 0, 0, 0.58);
+  color: white;
+  padding: 10px 0;
+}
+
+.box button{
+  background-color: #e7522f;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.box button:hover{
+  background-color: orange;
+}
+
+.box .label{
+  width: 60px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+footer{
+  text-align: center;
+  margin: 20px 0;
+}
