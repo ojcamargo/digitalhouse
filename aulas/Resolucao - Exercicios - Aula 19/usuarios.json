@@ -1,0 +1,7 @@
+{
+    "usuarios": [
+        {"nome": "Hendy", "sobrenome": "Almeida", "idade": 22},
+        {"nome": "Victor", "sobrenome": "Yudji", "idade": 34},
+        {"nome": "William", "sobrenome": "Craco", "idade": 35}
+    ]
+}
