@@ -8,9 +8,11 @@ require 'VeiculoLuxo.php';
 require 'Locacao.php';
 
 $cliente = new Cliente('Otavio','Camargo');
-$veiculo = new VeiculoLuxo();
-$locacao = new Locacao($cliente,$veiculo,2);
+$uno = new VeiculoEconomico('BOX-5168');
+$locacao = new Locacao($cliente);
 
-echo $locacao->calcular();
+echo $cliente->getNome();
+echo PHP_EOL;
+echo $locacao->calcular($uno,2);
 
- ?>
+?>

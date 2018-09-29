@@ -2,8 +2,10 @@
 
 class VeiculoEconomico extends Veiculo {
 
-  public function __construct() {
-    parent::__construct("Economico");
+  private $diaria;
+
+  public function __construct($placa) {
+    parent::__construct($placa, 55);
   }
 
 }

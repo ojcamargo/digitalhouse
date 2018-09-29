@@ -1,23 +1,12 @@
 <?php
 
-class Veiculo {
-  private $tipo;
+abstract class Veiculo {
+  private $placa;
   private $diaria;
 
-  public function __construct($tipo) {
-    $this->tipo = $tipo;
-    if($this->tipo === "Economico") {
-      $this->diaria = 55;
-    }
-    elseif($this->tipo === "Familia") {
-      $this->diaria = 170;
-    }
-    elseif($this->tipo === "Luxo") {
-      $this->diaria = 210;
-    }
-    else {
-      $this->diaria = 0;
-    }
+  public function __construct($placa,$diaria) {
+    $this->diaria = $diaria;
+    $this->placa = $placa;
   }
 
   public function getDiaria() {

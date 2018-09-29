@@ -2,8 +2,14 @@
 
 class VeiculoLuxo extends Veiculo {
 
-  public function __construct() {
-    parent::__construct("Luxo");
+  private $diaria;
+
+  public function __construct($placa) {
+    parent::__construct($placa,210);
+  }
+
+  public function getDiaria() {
+    return $this->diaria;
   }
 
 }

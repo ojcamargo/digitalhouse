@@ -6,13 +6,13 @@ class Locacao {
   private $veiculo;
   private $dias;
 
-  public function __construct($cliente, $veiculo, $dias) {
+  public function __construct($cliente) {
     $this->cliente = $cliente;
-    $this->veiculo = $veiculo;
-    $this->dias = $dias;
   }
 
-  public function calcular() {
+  public function calcular($veiculo,$dias) {
+    $this->veiculo = $veiculo;
+    $this->dias = $dias;
     return $this->dias * $this->veiculo->getDiaria();
   }
 
