@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans+Narrow" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Aula 02</title>
+  </head>
+  <body>
+    <section id="sec-0">
+      <h1>JavaScript - Funções, Arrays e Objetos</h1>
+    </section>
+    <section id="sec-1">
+      <div>
+        <h2>Funções</h2>
+        <div class="sub sub-0">
+          <code>
+            <span class="comment">// Uma função é um bloco de códigos designado para realizar uma tarefa.</span>
+            <span><span class="command">function</span> oProduto<span class="operator">(</span>n1<span class="operator">,</span> n2<span class="operator">)</span> {</span>
+            <span><span class="command">&nbsp;&nbsp;return</span> n1 <span class="operator">*</span> n2; <span class="comment">// Retorna o produto de n1 com n2</span></span>
+            <span>}</span>
+            <span></span>
+            <span class="comment">// Uma função é executada quando é invocada por alguém.</span>
+            <span><span class="command">oProduto</span>(<span class="number">2<span class="operator">,</span> 5</span>); <span class="comment">// Isso retornará 10</span></span>
+          </code>
+        </div>
+        <div class="sub sub-1">
+          <code>
+            <span class="comment">// Podemos atribuir uma função anônima a uma variável.</span>
+            <span><span class="command">var</span> nomeFuncao<span class="operator"> = </span><span class="command">function</span>() {</span>
+            <span><span class="command">&nbsp;&nbsp;console.log</span> (<span class="string">"Olá"</span>);</span>
+            <span>}</span>
+            <span></span>
+            <span><span class="command">nomeFuncao</span>();</span>
+          </code>
+        </div>
+      </div>
+    </section>
+    <section id="sec-2">
+      <div>
+        <h3>Escopo (Scope)</h3>
+        <div>
+          <p>O escopo de uma variável é o contexto em que ela é visível.</p>
+          <code>
+            <span><span class="command">function</span> myFunction() {</span>
+            <span>&nbsp;&nbsp;<span class="command">var</span> a <span class="operator">=</span> <span class="number">4</span>; <span class="comment">// <b>a</b> é uma variável <b>local</b></span></span>
+            <span>&nbsp;&nbsp;<span class="command">return</span> a <span class="operator">*</span> a;</span>
+            <span>}</span>
+          </code>
+          <code>
+            <span><span class="command">var</span> a <span class="operator">=</span> <span class="number">4</span>; <span class="comment">// <b>a</b> é uma variável <b>global</b></span></span>
+            <span><span class="command">function</span> myFunction() {</span>
+            <span>&nbsp;&nbsp;<span class="command">return</span> a <span class="operator">*</span> a;</span>
+            <span>}</span>
+          </code>
+        </div>
+      </div>
+    </section>
+    <section id="sec-3">
+      <div>
+        <h3>Funções Aninhadas</h3>
+        <p>Podemos ter uma função dentro de outra função.<br>
+        A função aninhada será visível apenas dentro da função pai.</p>
+        <code>
+          <span><span class="command">function</span> circunferencia (raio) {</span>
+          <span class="comment">&nbsp;&nbsp;// função aninhada</span>
+          <span>&nbsp;&nbsp;<span class="command">function</span> diametro() {</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">return</span> <span class="number">2</span><span class="operator">*</span>raio; <span class="comment">// raio é uma variável da função pai</span></span>
+          <span>&nbsp;&nbsp;}</span>
+          <span>&nbsp;&nbsp;<span class="command">return</span> Math.PI <span class="operator">*</span> diametro(); <span class="comment">// invocamos a função</span></span>
+          <span>}</span>
+        </code>
+      </div>
+    </section>
+    <section id="sec-4">
+      <div>
+        <h3>Exemplo</h3>
+        <div class="sub sub-0">
+          <code>
+            <span><span class="command">function</span> a(){</span>
+            <span>&nbsp;&nbsp;<span class="command">console.log</span>(<span class="string">'a vem primeiro'</span>);</span>
+            <span>}</span>
+            <span><span class="command">function</span> b(){</span>
+            <span>&nbsp;&nbsp;<span class="command">console.log</span>(<span class="string">'b vem depois'</span>);</span>
+            <span>}</span>
+            <span><span class="command">a</span>();</span>
+            <span><span class="command">b</span>();</span>
+          </code>
+        </div>
+        <div class="sub sub-1">
+          <code>
+            <span><span class="command">function</span> a(){</span>
+            <span><span class="command">&nbsp;&nbsp;setTimeout</span>(<span class="command">function</span>(){</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">console.log</span>(<span class="string">'a vem depois'</span>);</span>
+            <span>&nbsp;&nbsp;}, <span class="number">500</span>)</span>
+            <span>}</span>
+            <span><span class="command">function</span> b(){</span>
+            <span>&nbsp;&nbsp;<span class="command">console.log</span>(<span class="string">'b vem primeiro'</span>);</span>
+            <span>}</span>
+            <span><span class="command">a</span>();</span>
+            <span><span class="command">b</span>();</span>
+          </code>
+        </div>
+      </div>
+    </section>
+    <section id="sec-5">
+      <div>
+        <h3>Callbacks</h3>
+        <div class="sub sub-0">
+          <p>Callback é uma função passada como parâmetro a outra função,<br>
+            que será executada após o término da primeira.</p>
+          <p>JavaScript é uma linguagem assíncrona.<br>
+            Isso significa que é possível executar uma invocação sem saber quando ela termina.<br>
+            Para poder administrar essa situação, utilizamos o padrão de design callback.</p>
+          <p>Os callbacks podem ser usados de várias formas.<br>
+            No próximo exemplo, utilizamos um callback com uma função anônima.</p>
+        </div>
+        <div class="sub sub-1">
+          <code>
+            <span><span class="command">function</span> a( <b>callback</b> ){</span>
+            <span><span class="command">&nbsp;&nbsp;setTimeout</span>(<span class="command">function</span>(){</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">console.log</span>(<span class="string">'a vem primeiro'</span>);</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;<b><span class="command">callback</span>()</b>;</span>
+            <span>&nbsp;&nbsp;}, <span class="number">1000</span>)</span>
+            <span>}</span>
+            <span><span class="command">function</span> b(){</span>
+            <span>&nbsp;&nbsp;<span class="command">console.log</span>(<span class="string">'b vem depois'</span>);</span>
+            <span>}</span>
+            <span><span class="command">a</span>( <b>b</b> );</span>
+          </code>
+        </div>
+      </div>
+    </section>
+    <section id="sec-6">
+      <h1>Arrays</h1>
+    </section>
+    <section id="sec-7">
+      <div>
+        <div class="sub sub-0">
+          <h3>Arrays - Método forEach</h3>
+          <code>
+            <span>[<span class="number">1</span>, <span class="number">5</span>, <span class="number">7</span>].<span class="command">forEach</span>(<span class="command">function</span>(value, index) {</span>
+            <span>&nbsp;&nbsp;<span class="command">console.log</span>(<span class="string">"No índice: "</span> <span class="operator">+</span> index <span class="operator">+</span> <span class="string">" está o valor: "</span> <span class="operator">+</span> value);</span>
+            <span>});</span>
+          </code>
+        </div>
+        <div class="sub sub-1">
+          <h3>Arrays - Método map</h3>
+          <p>O map é usado para modificar cada um dos itens de um array<br> utilizando uma função determinada.</p>
+          <code>
+            <span>[<span class="number">1</span>, <span class="number">5</span>, <span class="number">7</span>].<span class="command">map</span>(<span class="command">function</span>(numero) {</span>
+            <span>&nbsp;&nbsp;<span class="command">return</span> numero <span class="operator">*</span> <span class="number">2</span>;</span>
+            <span>});</span>
+            <span></span>
+            <span class="comment">// O resultado será uma nova array com os valores [2, 10, 14]</span>
+          </code>
+        </div>
+        <div class="sub sub-2">
+          <h3>Arrays - Método filter</h3>
+          <p>O filter é usado para filtrar alguns elementos de um array.</p>
+          <code>
+            <span>[<span class="number">13</span>, <span class="number">18</span>, <span class="number">20</span>].<span class="command">filter</span>(<span class="command">function</span>(numero) {</span>
+            <span>&nbsp;&nbsp;<span class="command">return</span> ( numero <span class="operator">&gt;=</span> <span class="number">18</span> );</span>
+            <span>});</span>
+            <span></span>
+            <span class="comment">// O resultado será uma nova array com os valores [18, 20]</span>
+          </code>
+        </div>
+        <div class="sub sub-3">
+          <h3>Arrays - Método reduce</h3>
+          <p>O reduce é usado para reduzir um array a um valor único,<br>
+              utilizando uma função determinada.</p>
+          <code>
+            <span>[<span class="number">1</span>, <span class="number">5</span>, <span class="number">7</span>].<span class="command">reduce</span>(<span class="command">function</span>(total, numero) {</span>
+            <span>&nbsp;&nbsp;<span class="command">return</span> total <span class="operator">+</span> numero;</span>
+            <span>});</span>
+            <span></span>
+            <span class="comment">// O resultado é um valor único: 13</span>
+          </code>
+        </div>
+      </div>
+    </section>
+    <section id="sec-8">
+      <h1>Objeto literal</h1>
+    </section>
+    <section id="sec-9">
+      <div>
+        <h2>Definição de Objetos</h2>
+        <p>Um <b>objeto</b> é qualquer item do dia a dia representado em códigos.</p>
+        <code>
+          <span><span class="command">var</span> carro <span class="operator">=</span> {</span>
+          <span>&nbsp;&nbsp;marca: <span class="string">"Chevrolet"</span>,</span>
+          <span>&nbsp;&nbsp;modelo: <span class="string">"Corsa"</span>,</span>
+          <span>&nbsp;&nbsp;quilometragem: <span class="number">65000</span>,</span>
+          <span>&nbsp;&nbsp;cor: <span class="string">"Branco"</span>,</span>
+          <span>&nbsp;&nbsp;donos: [<span class="string">"Luciana"</span>, <span class="string">"João"</span>, <span class="string">"Zezinho"</span>]</span>
+          <span>};</span>
+        </code>
+        <p>Os objetos têm propriedades usadas para descrevê-lo.<br>
+          Elas podem ser de vários tipos (number, string, array, object, etc.)</p>
+      </div>
+    </section>
+    <section id="sec-10">
+      <div>
+        <h2>Propriedade de Objetos</h2>
+        <div class="sub sub-0">
+          <p>É possível acessar uma propriedade de um objeto de várias formas:</p>
+          <code>
+            <span>carro.marca; <span class="comment">// "Chevrolet"</span> </span>
+            <span>carro[<span class="string">"marca"</span>]; <span class="comment">// "Chevrolet"</span> </span>
+          </code>
+          <p>É possível acessar utilizando variáveis:</p>
+          <code>
+            <span>var prop <span class="operator">=</span> <span class="string">"marca"</span>;</span>
+            <span>carro[prop]; <span class="comment">// "Chevrolet"</span> </span>
+          </code>
+        </div>
+        <div class="sub sub-1">
+          <p>É possível alterar o valor de uma propriedade:</p>
+          <code>
+            <span>carro.cor <span class="operator">=</span> <span class="string">"Vermelho"</span>;</span>
+            <span>carro[<span class="string">"cor"</span>] <span class="operator">=</span> <span class="string">"Vermelho"</span>;</span>
+          </code>
+          <p>Também é possível adicionar propriedades novas a um objeto:</p>
+          <code>
+            <span>carro.velocidadeMax <span class="operator">=</span> <span class="number">200</span>;</span>
+            <span>carro[<span class="string">"velocidadeMax"</span>] <span class="operator">=</span> <span class="number">200</span>;</span>
+          </code>
+        </div>
+      </div>
+    </section>
+    <section id="sec-11">
+      <div>
+        <h2>Métodos de Objetos</h2>
+        <div class="sub sub-0">
+          <p>Também existem <b>métodos</b> para interagir com os objetos.<br>
+            Um método é uma propriedade do objeto com uma <b>função</b> atribuída.</p>
+          <code>
+            <span><span class="command">var</span> carro <span class="operator">=</span> {</span>
+            <span>&nbsp;&nbsp;marca: <span class="string">"Chevrolet"</span>,</span>
+            <span>&nbsp;&nbsp;ligar: <span class="command">function</span>(){ <span class="command">console.log</span>(<span class="string">"vrum vrum"</span>); },</span>
+            <span>&nbsp;&nbsp;modelo: <span class="string">"Corsa"</span></span>
+            <span>};</span>
+            <span>carro.<span class="command">ligar</span>();</span>
+            <span class="comment">// É possível utilizar carro["ligar"]();</span>
+          </code>
+        </div>
+        <div class="sub sub-1">
+          <p>Como são funções, os métodos também podem receber parâmetros.</p>
+          <code>
+            <span><span class="command">var</span> carro <span class="operator">=</span> {</span>
+            <span>&nbsp;&nbsp;marca: <span class="string">"Chevrolet"</span>,</span>
+            <span>&nbsp;&nbsp;motorista: <span class="command">function</span>(nome){</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">console.log</span>(nome <span class="operator">+</span> <span class="string">" está dirigindo"</span>);</span>
+            <span>&nbsp;&nbsp;},</span>
+            <span>&nbsp;&nbsp;modelo: <span class="string">"Corsa"</span></span>
+            <span>};</span>
+            <span>carro.<span class="command">motorista</span>(<span class="string">"Pedro"</span>);</span>
+          </code>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
