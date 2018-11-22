@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans+Narrow" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Aula 03</title>
+  </head>
+  <body>
+    <section id="sec-0">
+      <h1>DOM, seletores e elementos</h1>
+    </section>
+    <section id="sec-1">
+      <h1>DOM (Document Object Model)</h1>
+    </section>
+    <section id="sec-2">
+      <div>
+        <h3>DOM - Definição</h3>
+        <div class="sub sub-0">
+          <p>O document object model (DOM) oferece uma representação<br>
+            estrutural de um documento html.</p>
+          <img src="pic_htmltree.gif">
+        </div>
+        <div class="sub sub-1">
+          <h4>Com o DOM, o JavaScript consegue:</h4>
+          <ul>
+            <li>Modificar elementos, atributos e estilos de uma página.</li>
+            <li>Excluir qualquer elemento e atributo.</li>
+            <li>Adicionar novos elementos ou atributos.</li>
+            <li>Responder a todos os eventos HTML da página.</li>
+            <li>Criar novos eventos HTML na página.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="sec-3">
+      <div>
+        <h1>SELETORES</h1>
+      </div>
+    </section>
+    <section id="sec-4">
+      <div>
+        <h2>Seletores</h2>
+        <div class="sub sub-0">
+          <p>Para acessar os elementos de uma página, usamos seletores.<br>
+            É possível acessar usando os nós, mas isso pode ser um pouco confuso.<br>
+            Cada seletor pode retornar apenas um elemento ou um array.</p>
+        </div>
+        <div class="sub sub-1">
+          <h4>O objeto document tem os seguintes<br>seletores como método:</h4>
+          <ul>
+            <li>document.getElementById(ID)</li>
+            <li>document.getElementsByClassName(classe)</li>
+            <li>document.querySelector(cssQuery)</li>
+            <li>document.querySelectorAll(cssQuery)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="sec-5">
+      <div>
+        <h3>document.getElementById()</h3>
+        <code>
+          <span>&lt;<span class="tag">html</span>&gt;</span>
+          <span>&lt;<span class="tag">head</span>&gt;</span>
+          <span>&lt;/<span class="tag">head</span>&gt;</span>
+          <span>&lt;<span class="tag">body</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">h1</span> <span class="argument">id=</span><span class="string">"cabecalho"</span>&gt;Bem-Vindo!&lt;/<span class="tag">h1</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">script</span>&gt;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">document.getElementById</span>(<span class="string">"cabecalho"</span>).style.display <span class="operator">=</span> <span class="string">'none'</span>;</span>
+          <span>&nbsp;&nbsp;&lt;/<span class="tag">script</span>&gt;</span>
+          <span>&lt;/<span class="tag">body</span>&gt;</span>
+          <span>&lt;/<span class="tag">html</span>&gt;</span>
+          <span></span>
+          <span class="comment">// getElementById seleciona o elemento com o id informado.</span>
+        </code>
+      </div>
+    </section>
+    <section id="sec-6">
+      <div>
+        <h3>document.getElementsByClassName()</h3>
+        <code>
+          <span>&lt;<span class="tag">html</span>&gt;</span>
+          <span>&lt;<span class="tag">head</span>&gt;</span>
+          <span>&lt;/<span class="tag">head</span>&gt;</span>
+          <span>&lt;<span class="tag">body</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">h1</span> <span class="argument">class=</span><span class="string">"cabecalho"</span>&gt;Bem-Vindo!&lt;/<span class="tag">h1</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">h2</span> <span class="argument">class=</span><span class="string">"cabecalho"</span>&gt;Bem-Vindo, meu amigo!&lt;/<span class="tag">h2</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">script</span>&gt;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">let</span> elementos <span class="operator">=</span> <span class="command">document.getElementsByClassName</span>(<span class="string">"cabecalho"</span>);</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">console.log</span>(elementos); <span class="comment"> // HTMLCollection(2) [h1.cabecalho, h2.cabecalho]</span> </span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">for</span>(<span class="command">var</span> i<span class="operator">=</span>0; i<span class="operator">&lt;</span>elementos.length; i<span class="operator">++</span>){</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementos[i].style.color <span class="operator">=</span> <span class="string">'green'</span></span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+          <span>&nbsp;&nbsp;&lt;/<span class="tag">script</span>&gt;</span>
+          <span>&lt;/<span class="tag">body</span>&gt;</span>
+          <span>&lt;/<span class="tag">html</span>&gt;</span>
+          <span></span>
+          <span class="comment">// getElementsByClassName seleciona todos os elementos que possuem a classe informada.</span>
+        </code>
+      </div>
+    </section>
+    <section id="sec-7">
+      <div>
+        <h3>document.querySelector()</h3>
+        <code>
+          <span>&lt;<span class="tag">html</span>&gt;</span>
+          <span>&lt;<span class="tag">head</span>&gt;</span>
+          <span>&lt;/<span class="tag">head</span>&gt;</span>
+          <span>&lt;<span class="tag">body</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">h1</span> <span class="argument">class=</span><span class="string">"cabecalho"</span>&gt;Bem-Vindo!&lt;/<span class="tag">h1</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">script</span>&gt;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">document.querySelector</span>(<span class="string">".cabecalho"</span>).style.color <span class="operator">=</span> <span class="string">'blue'</span>;</span>
+          <span>&nbsp;&nbsp;&lt;/<span class="tag">script</span>&gt;</span>
+          <span>&lt;/<span class="tag">body</span>&gt;</span>
+          <span>&lt;/<span class="tag">html</span>&gt;</span>
+          <span></span>
+          <span class="comment">// querySelector() seleciona o primeiro elemento que cumprir a condição.</span>
+        </code>
+      </div>
+    </section>
+    <section id="sec-8">
+      <div>
+        <h3>document.querySelectorAll()</h3>
+        <code>
+          <span>&lt;<span class="tag">html</span>&gt;</span>
+          <span>&lt;<span class="tag">head</span>&gt;</span>
+          <span>&lt;/<span class="tag">head</span>&gt;</span>
+          <span>&lt;<span class="tag">body</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">h1</span> <span class="argument">class=</span><span class="string">"vermelho"</span>&gt;Bem-Vindo!&lt;/<span class="tag">h1</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">h2</span> <span class="argument">class=</span><span class="string">"vermelho"</span>&gt;Bem-Vindo, meu amigo!&lt;/<span class="tag">h2</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">script</span>&gt;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">let</span> elementos <span class="operator">=</span> <span class="command">document.querySelectorAll</span>(<span class="string">".vermelho"</span>);</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">console.log</span>(elementos); <span class="comment"> // HTMLCollection(2) [h1.vermelho, h2.vermelho]</span> </span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">for</span>(<span class="command">var</span> i<span class="operator">=</span>0; i<span class="operator">&lt;</span>elementos.length; i<span class="operator">++</span>){</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementos[i].style.color <span class="operator">=</span> <span class="string">'red'</span></span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+          <span>&nbsp;&nbsp;&lt;/<span class="tag">script</span>&gt;</span>
+          <span>&lt;/<span class="tag">body</span>&gt;</span>
+          <span>&lt;/<span class="tag">html</span>&gt;</span>
+          <span></span>
+          <span class="comment">// querySelectorAll seleciona todos os elementos que cumprirem a condição.</span>
+        </code>
+      </div>
+    </section>
+    <section id="sec-9">
+      <div>
+        <h2>Atributos</h2>
+        <p>Assim que um elemento é selecionado, é possível acessar<br>
+          os atributos dele usando a propriedade attributes.<br>
+          Ela retorna um mapa (objeto/array) que tem valores key/value<br>
+          com os nomes e valores dos atributos desse elemento.</p>
+        <code>
+          <span><span class="command">let</span> atributos <span class="operator">=</span> elemento.attributes;</span>
+        </code>
+      </div>
+    </section>
+    <section id="sec-10">
+      <div>
+        <div class="sub sub-0">
+          <h2>getAttribute()</h2>
+          <p>O método getAttribute aceita uma string como parâmetro com o nome<br>
+            do atributo que queremos obter. Retorna o valor do atributo.<br>
+            Caso ele não seja encontrado, retorna null.</p>
+          <code>
+            <span><span class="command">let</span> href <span class="operator">=</span> elemento.<span class="command">getAttribute</span>(<span class="string">"href"</span>);</span>
+          </code>
+        </div>
+        <div class="sub sub-1">
+          <h2>setAttribute()</h2>
+          <p>O método setAttribute permite adicionar um novo atributo<br>
+            ou modificar um existente.</p>
+          <code>
+            <span>elemento.<span class="command">setAttribute</span>(<span class="string">"class"</span>,<span class="string">"vermelho"</span>);</span>
+          </code>
+        </div>
+        <div class="sub sub-2">
+          <h2>hasAttribute()</h2>
+          <p>O método hasAttribute aceita uma string como parâmetro com o nome do<br>
+            atributo que queremos saber se existe no elemento.<br>
+            Retorna um valor booleano.</p>
+          <code>
+            <span>elemento.<span class="command">hasAttribute</span>(<span class="string">"href"</span>);</span>
+          </code>
+        </div>
+        <div class="sub sub-3">
+          <h2>removeAttribute()</h2>
+          <p>Com o método removeAttribute, podemos remover um atributo existente.</p>
+          <code>
+            <span>elemento.<span class="command">removeAttribute</span>(<span class="string">"class"</span>);</span>
+          </code>
+        </div>
+      </div>
+    </section>
+    <section id="sec-11">
+      <div>
+        <h3>Estilos</h3>
+        <ul class="ul-sm">
+          <li>Os elementos HTML têm uma propriedade chamada style,<br> que retorna um objeto literal que representa os estilos desse objeto.</li>
+          <li>É possível adicionar ou modificar seus atributos.</li>
+          <li>Os nomes das propriedades CSS em JavaScript são escritos<br> no seguinte formato: <b>nomeDaPropiedadeDeCss</b>.</li>
+        </ul>
+        <code>
+          <span>elemento.style.color <span class="operator">=</span> <span class="string">"red"</span>;</span>
+          <span>elemento.style.fontWeight <span class="operator">=</span> <span class="string">"bold"</span>;</span>
+        </code>
+      </div>
+    </section>
+    <section id="sec-12">
+      <h1>ELEMENTOS</h1>
+    </section>
+    <section id="sec-13">
+      <div>
+        <h2>Criando Elementos</h2>
+        <div class="sub sub-0">
+          <p>O método createElement permite criar novos elementos HTML.<br>
+            createElement aceita como parâmetro strings com nomes de tags HTML<br>
+            (a, div, span, li, ul, etc).</p>
+          <code>
+            <span><span class="command">let</span> btn <span class="operator">=</span> document.<span class="command">createElement</span>(<span class="string">"BUTTON"</span>);</span>
+          </code>
+        </div>
+        <div class="sub sub-1">
+          <p>O método createTextNode permite criar novos textos HTML.</p>
+          <code>
+            <span><span class="command">let</span> texto <span class="operator">=</span> document.<span class="command">createTextNode</span>(<span class="string">"Olá, sou um texto!"</span>);</span>
+          </code>
+        </div>
+      </div>
+    </section>
+    <section id="sec-14">
+      <div>
+        <h3>Inserindo elementos - appendChild</h3>
+        <p>O método appendChild permite inserir um nó(elemento) dentro de outro.</p>
+        <code>
+          <span>&lt;<span class="tag">body</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">ul</span> <span class="argument">id=</span><span class="string">"myList"</span>&gt;&lt;/<span class="tag">ul</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">script</span>&gt;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">let</span> li <span class="operator">=</span> document.<span class="command">createElement</span>(<span class="string">"LI"</span>);</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">let</span> liText <span class="operator">=</span> document.<span class="command">createTextNode</span>(<span class="string">"Water"</span>);</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;li.<span class="command">appendChild</span>(liText);</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;document.<span class="command">getElementById</span>(<span class="string">"myList"</span>).<span class="command">appendChild</span>(li);</span>
+          <span>&nbsp;&nbsp;&lt;/<span class="tag">script</span>&gt;</span>
+          <span>&lt;/<span class="tag">body</span>&gt;</span>
+        </code>
+      </div>
+    </section>
+    <section id="sec-15">
+      <div>
+        <h3>textContent</h3>
+        <p>O método textContent permite ler ou escrever conteúdo como texto.<br>
+          Quando ele lê, ele remove todas as tags HTML do conteúdo.</p>
+        <code>
+          <span>&lt;<span class="tag">body</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">h1</span> <span class="argument">id=</span><span class="string">"cabecalho"</span>&gt;&lt;<span class="tag">strong</span>&gt;Bem-Vindo!&lt;/<span class="tag">strong</span>&gt;&lt;/<span class="tag">h1</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">script</span>&gt;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">let</span> elemento <span class="operator">=</span> <span class="command">document.getElementById</span>(<span class="string">"cabecalho"</span>);</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">console.log</span>(elemento.textContent); <span class="comment">// "Bem vindo!"</span> </span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;elemento.textContent <span class="operator">=</span> <span class="string">"Novo texto!"</span>;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">console.log</span>(elemento.textContent); <span class="comment">// "Novo texto!"</span> </span>
+          <span>&nbsp;&nbsp;&lt;/<span class="tag">script</span>&gt;</span>
+          <span>&lt;/<span class="tag">body</span>&gt;</span>
+        </code>
+      </div>
+    </section>
+    <section id="sec-16">
+      <div>
+        <h3>innerHTML</h3>
+        <p>O método innerHTML permite ler ou escrever conteúdo em HTML.</p>
+        <code>
+          <span>&lt;<span class="tag">body</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">h1</span> <span class="argument">id=</span><span class="string">"cabecalho"</span>&gt;&lt;<span class="tag">strong</span>&gt;Bem-Vindo!&lt;/<span class="tag">strong</span>&gt;&lt;/<span class="tag">h1</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">script</span>&gt;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">let</span> elemento <span class="operator">=</span> <span class="command">document.getElementById</span>(<span class="string">"cabecalho"</span>);</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">console.log</span>(elemento.innerHTML); <span class="comment">// "&lt;strong&gt;Bem vindo!&lt;/strong&gt;"</span> </span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;elemento.innerHTML <span class="operator">=</span> <span class="string">"&lt;b&gt;Novo texto!&lt;/b&gt;"</span>;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">console.log</span>(elemento.innerHTML); <span class="comment">// "&lt;b&gt;Novo texto!&lt;/b&gt;"</span> </span>
+          <span>&nbsp;&nbsp;&lt;/<span class="tag">script</span>&gt;</span>
+          <span>&lt;/<span class="tag">body</span>&gt;</span>
+        </code>
+      </div>
+    </section>
+    <section id="sec-17">
+      <div>
+        <h3>Removendo elementos - removeChild</h3>
+        <p>O objeto nó(node/elemento) tem um método chamado removeChild<br>
+          que permite remover nós(elementos) filhos.<br>
+          Para poder remover um nó, primeiro precisamos selecioná-lo.</p>
+        <code>
+          <span>&lt;<span class="tag">body</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">div</span> <span class="argument">id=</span><span class="string">"pai"</span>&gt;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">div</span> <span class="argument">id=</span><span class="string">"filho"</span>&gt;&lt;/<span class="tag">div</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;/<span class="tag">div</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">script</span>&gt;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">let</span> pai <span class="operator">=</span> <span class="command">document.getElementById</span>(<span class="string">"pai"</span>);</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">let</span> filho <span class="operator">=</span> <span class="command">document.getElementById</span>(<span class="string">"filho"</span>);</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;pai.<span class="command">removeChild</span>(filho);</span>
+          <span>&nbsp;&nbsp;&lt;/<span class="tag">script</span>&gt;</span>
+          <span>&lt;/<span class="tag">body</span>&gt;</span>
+        </code>
+      </div>
+    </section>
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

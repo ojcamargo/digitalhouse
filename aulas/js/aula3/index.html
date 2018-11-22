@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans+Narrow" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Aula 03</title>
+  </head>
+  <body>
+    <section id="sec-0">
+      <h1>JavaScript integrado a HTML</h1>
+    </section>
+    <section id="sec-1">
+      <div>
+        <h3>Adicionar JavaScript a um arquivo HTML</h3>
+        <div class="sub sub-0">
+          <ol>
+            <li>Inserindo o código na tag <strong>&lt;script&gt;</strong>.</li>
+          </ol>
+          <code>
+            <span>&lt;<span class="tag">body</span>&gt;</span>
+            <span class="comment">&nbsp;&nbsp;&lt;!--Página HTML--&gt;</span>
+            <span>&nbsp;&nbsp;&lt;<span class="tag">script</span>&gt;</span>
+            <span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;// código JavaScript</span>
+            <span>&nbsp;&nbsp;&lt;/<span class="tag">script</span>&gt;</span>
+            <span>&lt;/<span class="tag">body</span>&gt;</span>
+          </code>
+        </div>
+        <div class="sub sub-1">
+          <ol start="2">
+            <li>Vinculando a um arquivo externo:</li>
+          </ol>
+          <code>
+            <span>&lt;<span class="tag">body</span>&gt;</span>
+            <span class="comment">&nbsp;&nbsp;&lt;!--Página HTML--&gt;</span>
+            <span>&nbsp;&nbsp;&lt;<span class="tag">script</span> <span class="argument">src=</span><span class="string">"arquivo.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;</span>
+            <span>&lt;/<span class="tag">body</span>&gt;</span>
+          </code>
+        </div>
+      </div>
+    </section>
+    <section id="sec-2">
+      <div>
+        <p>Para depurar JavaScript na linha de comando do navegador, utilizamos:</p>
+        <h3>console.log()</h3>
+        <code>
+          <span>&lt;<span class="tag">body</span>&gt;</span>
+          <span>&nbsp;&nbsp;&lt;<span class="tag">script</span>&gt;</span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="command">console.log</span>(<span class="number">5</span><span class="operator">+</span><span class="number">6</span>);</span>
+          <span>&nbsp;&nbsp;&lt;/<span class="tag">script</span>&gt;</span>
+          <span>&lt;/<span class="tag">body</span>&gt;</span>
+        </code>
+      </div>
+    </section>
+    <section id="sec-3">
+      <div>
+        <h3>alert()</h3>
+        <p>O método alert permite mostrar uma mensagem na tela,<br>
+          com <b>apenas 1 botão</b> "OK" para fechar.<br>
+          Esse método deve ser usado apenas para informar o usuário.</p>
+        <code>
+          <span>&lt;<span class="tag">script</span>&gt;</span>
+          <span>&nbsp;&nbsp;<span class="command">alert</span>(<span class="string">"ALERTA VERMELHO!"</span>);</span>
+          <span>&lt;/<span class="tag">script</span>&gt;</span>
+        </code>
+      </div>
+    </section>
+    <section id="sec-4">
+      <div>
+        <h3>prompt()</h3>
+        <p>O método prompt permite interagir com o usuário,<br>
+          pois podemos pedir que ele insira um valor.</p>
+          <code>
+            <span>&lt;<span class="tag">script</span>&gt;</span>
+            <span>&nbsp;&nbsp;<span class="command">var</span> nome <span class="operator">=</span> <span class="command">prompt</span>(<span class="string">"Insira seu nome:"</span>);</span>
+            <span>&lt;/<span class="tag">script</span>&gt;</span>
+          </code>
+          <p>A resposta inserida pelo usuário será salva na variável <b>nome</b>.</p>
+      </div>
+    </section>
+    <section id="sec-5">
+      <div>
+        <h3>confirm()</h3>
+        <p>O método confirm mostra uma mensagem para o usuário,<br>
+          com <b>2 botões</b>: "SIM" e "NÃO" ou "OK" e "CANCELAR",<br>
+          e retorna um <b>booleano(true/false)</b>.</p>
+          <code>
+            <span>&lt;<span class="tag">script</span>&gt;</span>
+            <span>&nbsp;&nbsp;<span class="command">var</span> maior <span class="operator">=</span> <span class="command">confirm</span>(<span class="string">"Você é maior de idade?"</span>);</span>
+            <span>&lt;/<span class="tag">script</span>&gt;</span>
+          </code>
+          <p>A resposta inserida pelo usuário (true ou false)<br>será salva na variável <b>maior</b>.</p>
+      </div>
+    </section>
+    <section id="sec-6">
+      <h1>Objetos:<br>window e document</h1>
+    </section>
+    <section id="sec-7">
+      <div>
+        <div class="sub sub-0">
+          <h3>window X document</h3>
+          <p>O objeto <strong>window</strong> é o primeiro que é carregado no navegador.<br><br>
+            O objeto <strong>window</strong> tem propriedades como length, innerWidth, etc..<br><br>
+            O objeto <strong>document</strong> representa o html, php ou outro documento que será<br>
+            carregado no navegador. O <strong>document</strong> é carregado dentro do objeto window<br>
+            e tem propriedades como title, url, cookie, etc..</p>
+        </div>
+        <div class="sub sub-1">
+          <h3>window X document</h3>
+          <img src="img01.jpg" alt="">
+        </div>
+      </div>
+    </section>
+    <section id="sec-8">
+      <div>
+        <h2>window</h2>
+        <div class="sub sub-0">
+          <p>Para acessar as propriedades de window, usamos window.nomePropriedade <br>
+          ou, para facilitar, apenas nomePropriedade.</p>
+          <code>
+            <span>window.innerHeight <span class="comment">// retorna a altura da janela do navegador</span></span>
+            <span>window.innerWidth <span class="comment">// retorna a largura da janela do navegador</span></span>
+            <span><span class="command">window.open</span>() <span class="comment">// abre uma nova janela</span></span>
+            <span><span class="command">window.close</span>() <span class="comment">// fecha uma janela</span></span>
+          </code>
+        </div>
+        <div class="sub sub-1">
+          <p>Todos os métodos como alert, confirm, etc. pertencem a window.<br>
+            Sua notação é opcional, ou seja, pode ser feita das duas formas:</p>
+          <code>
+            <span><span class="command">window.alert</span>() == <span class="command">alert</span>()</span>
+            <span>window.innerHeight == innerHeight</span>
+            <span></span>
+            <span class="comment">// Inclusive as variáveis globais fazem parte de window:</span>
+            <span><span class="command">var</span> teste <span class="operator">=</span> <span class="number">123</span>;</span>
+            <span><span class="command">console.log</span>(window.teste) <span class="comment">// Imprimirá 123 no console.</span></span>
+          </code>
+        </div>
+        <div class="sub sub-2">
+          <p><strong>location</strong><br>
+            Location é um objeto que representa a URL.<br>
+            Por meio das propriedades dele, é possível acessar várias partes da URL,<br>
+            além de navegar para outro documento. </p>
+          <code>
+            <span>location <span class="operator">=</span> <span class="string">'http://www.google.com'</span>; <span class="comment">//redireciona para google.com </span></span>
+            <span><span class="command">console.log</span>(<span class="string">"A URL atual é: "</span><span class="operator">+</span> location.href );</span>
+            <span>location.host; <span class="comment">// retorna o nome de host e o número de porta.</span></span>
+            <span>location.pathname; <span class="comment">// mostra o path do recurso</span></span>
+            <span>location.search; <span class="comment">// mostra os parâmetros da query string</span></span>
+          </code>
+        </div>
+        <div class="sub sub-3">
+          <p><strong>window.onload</strong><br>
+            O window.onload é uma função do Javascript que é chamada<br>
+            quando a página termina de carregar completamente.<br>
+            Inclusive imagens, css e scripts.
+            Veja um exemplo abaixo: </p>
+          <code>
+            <span>window.onload <span class="operator">=</span> <span class="command">function</span>() {</span>
+            <span>&nbsp;&nbsp;<span class="command">console.log</span>(<span class="string">"Pronto, página carregada completamente!"</span>);</span>
+            <span>}</span>
+          </code>
+        </div>
+      </div>
+    </section>
+    <section id="sec-9">
+      <div>
+        <h2>document</h2>
+        <div class="sub sub-0">
+          <p>Para acessar as propriedades de document, usamos document.propriedade</p>
+          <code>
+            <span>document.body <span class="comment">// retorna o body do html</span></span>
+            <span>document.readyState <span class="comment">// Retorna o status do carregamento do documento</span></span>
+            <span><span class="command">document.write</span>() <span class="comment">// Escreve expressões HTML com JavaScript</span></span>
+            <span>document.title <span class="comment">// Retorna o título da página</span></span>
+          </code>
+        </div>
+        <div class="sub sub-1">
+          <p><strong>document.onload</strong><br>
+            O document.onload é uma função do Javascript que é chamada<br>
+            quando a página termina de carregar completamente.<br>
+            Porém antes de carregar as imagens e similares.<br>
+            Veja um exemplo abaixo: </p>
+          <code>
+            <span>document.onload <span class="operator">=</span> <span class="command">function</span>() {</span>
+            <span>&nbsp;&nbsp;<span class="command">console.log</span>(<span class="string">"Pronto, página carregada!"</span>);</span>
+            <span>}</span>
+          </code>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
