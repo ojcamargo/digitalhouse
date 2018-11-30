@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <form action="" method="post">
+      Nome: <input type="text" name="nome" value="" /><br />
+      Email: <input type="email" name="email" value="" /><br />
+      Senha: <input type="password" name="senha" value="" /><br />
+      Confirmacao: <input type="password" name="confirmacao" value="" /><br />
+      Sexo:
+      <input type="radio" name="sexo" value="M" />Masculino
+      <input type="radio" name="sexo" value="F" />Feminino
+      <br />
+      Pais:
+      <select name="pais">
+        <option selected disabled>Selecione</option>
+        <option value="br">Brasil</option>
+        <option value="us">Estados Unidos</option>
+        <option value="ar">Argentina</option>
+        <option value="fr">França</option>
+      </select>
+      <br />
+      <input type="checkbox" name="aceito" value="1" />Aceito os termos<br />
+      <button type="submit">Enviar</button>
+    </form>
+    <script type="text/javascript">
+        let form = document.querySelector("form");
+        form.onsubmit = function(e) {
+          e.preventDefault();
+          for(let i=0;i<form.elements.length;i++) {
+            console.log(form.elements[i].value);
+          }
+        }
+    </script>
+  </body>
+</html>
